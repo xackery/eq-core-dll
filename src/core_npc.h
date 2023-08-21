@@ -24,3 +24,23 @@ DETOUR_TRAMPOLINE_EMPTY(char* __fastcall InjectCustomNPCs_Trampoline(char* pThis
 // Hooks to CRaceGenderInfoManager::AddRaceGender
 void InjectCustomNPCs() { EzDetour((((DWORD)0x0050A440 - 0x400000) + baseAddress), InjectCustomNPCs_Detour, InjectCustomNPCs_Trampoline); };
 //signed int __thiscall CRaceGenderInfoManager::AddRaceGender(signed int* this, int a2, int a3, const char* a4, int a5, int a6)
+
+
+// Hooks to bool __thiscall PlayerZoneClient::IsFlyer(PlayerZoneClient *this)
+bool __fastcall InjectNPCIsFlyer_Trampoline(char* pThis, int raceID, int v3);
+bool __fastcall InjectNPCIsFlyer_Detour(char* pThis, int raceID, int v3)
+{
+	for (auto&& npc : NPCs) {
+		if (npc.raceID != raceID) {
+			continue;
+		}
+		if ((npc.raceMask & 1)) {
+			return true;
+		}
+		break;
+	}
+	return InjectNPCIsFlyer_Trampoline(pThis, raceID, v3);
+}
+DETOUR_TRAMPOLINE_EMPTY(bool __fastcall InjectNPCIsFlyer_Trampoline(char* pThis, int raceID, int v3));
+
+void InjectNPCIsFlyer() { EzDetour((((DWORD)0x0059ED50 - 0x400000) + baseAddress), InjectNPCIsFlyer_Detour, InjectNPCIsFlyer_Trampoline); };
