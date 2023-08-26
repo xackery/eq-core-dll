@@ -3,12 +3,13 @@
 #include "MQ2Main.h"
 
 struct NPCEntry {
-    explicit NPCEntry(int raceID, int genderID, const char* modelName, int raceMask, int dbStrID) : raceID(raceID), genderID(genderID), modelName(modelName), raceMask(raceMask), dbStrID(dbStrID) {};
+    explicit NPCEntry(int raceID, int genderID, const char* modelName, int raceMask, int dbStrID, bool isMount) : raceID(raceID), genderID(genderID), modelName(modelName), raceMask(raceMask), dbStrID(dbStrID), isMount(isMount) {};
     int raceID;
     int genderID;
     const char* modelName;			
     int raceMask;
     int dbStrID;
+    bool isMount;
 };
 
 struct ZoneEntry {

@@ -71,8 +71,8 @@ bool areCustomNPCsEnabled = false;
 // raceMask is a range of flags, typically using 8 is safe for most NPCs, but e.g. 1 = drivable boat, 2 = ridable boat, etc
 // dbStrID if left to 1 reverts to raceID as it's ID, otherwise you can custom set one, and it'll look up dbStr for info
 static NPCEntry NPCs[] = {
-    // raceID, genderID, modelName, raceMask, dbStrID
-    NPCEntry(733, 2, "SHI", 3, 1),
+    // raceID, genderID, modelName, raceMask, dbStrID, isMount
+    NPCEntry(733, 2, "SHI", 3, 1, false),
 };
 
 

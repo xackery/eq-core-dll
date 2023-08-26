@@ -24,3 +24,19 @@ DETOUR_TRAMPOLINE_EMPTY(char* __fastcall InjectCustomNPCs_Trampoline(char* pThis
 // Hooks to CRaceGenderInfoManager::AddRaceGender
 void InjectCustomNPCs() { EzDetour((((DWORD)0x0050A440 - 0x400000) + baseAddress), InjectCustomNPCs_Detour, InjectCustomNPCs_Trampoline); };
 //signed int __thiscall CRaceGenderInfoManager::AddRaceGender(signed int* this, int a2, int a3, const char* a4, int a5, int a6)
+
+// Hooks to BOOL __thiscall PlayerBase::IsAMount(PlayerBase* this)
+bool __fastcall InjectNPCIsAMount_Trampoline(char* pThis, int raceID);
+bool __fastcall InjectNPCIsAMount_Detour(char* pThis, int raceID)
+{
+	for (auto&& npc : NPCs) {
+		if (npc.raceID != raceID) {
+			continue;
+		}
+		return npc.isMount;
+	}
+	return InjectNPCIsAMount_Trampoline(pThis, raceID);
+}
+DETOUR_TRAMPOLINE_EMPTY(bool __fastcall InjectNPCIsAMount_Trampoline(char* pThis, int raceID));
+
+void InjectNPCIsAMount() { EzDetour((((DWORD)0x006C1940 - 0x400000) + baseAddress), InjectNPCIsAMount_Detour, InjectNPCIsAMount_Trampoline); };

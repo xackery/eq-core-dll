@@ -10,6 +10,9 @@ void InitOptions() {
 	if (areLuclinModelsDisabled) DisableLuclinModels();
 	if (isMapWindowDisabled) DisableCMapViewWnd();
 	if (areCustomZonesEnabled) InjectCustomZones();
-	if (areCustomNPCsEnabled) InjectCustomNPCs();
+	if (areCustomNPCsEnabled) {
+		InjectCustomNPCs();
+		InjectNPCIsAMount();
+	}
 	if (isBazaarWindowDisabled) DisableCBazaarSearchWnd();
 }
