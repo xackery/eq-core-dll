@@ -33,10 +33,11 @@ bool __fastcall InjectNPCIsAMount_Detour(char* pThis, int raceID)
 		if (npc.raceID != raceID) {
 			continue;
 		}
+		DebugSpew("Injected IsAMount for %s and returning %d", npc.modelName, npc.isMount);
 		return npc.isMount;
 	}
 	return InjectNPCIsAMount_Trampoline(pThis, raceID);
 }
 DETOUR_TRAMPOLINE_EMPTY(bool __fastcall InjectNPCIsAMount_Trampoline(char* pThis, int raceID));
 
-void InjectNPCIsAMount() { EzDetour((((DWORD)0x006C1940 - 0x400000) + baseAddress), InjectNPCIsAMount_Detour, InjectNPCIsAMount_Trampoline); };
+void InjectNPCIsAMount() { EzDetour((((DWORD)0x008CF970 - 0x400000) + baseAddress), InjectNPCIsAMount_Detour, InjectNPCIsAMount_Trampoline); };
