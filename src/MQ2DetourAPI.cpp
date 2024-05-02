@@ -12,6 +12,8 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 ******************************************************************************/
 
+//#include <sapi.h>
+
 // Exclude rarely-used stuff from Windows headers
 #define WIN32_LEAN_AND_MEAN
 #define _WIN32_WINNT 0x510
@@ -85,6 +87,47 @@ BOOL AddDetour(DWORD address, PBYTE pfDetour, PBYTE pfTrampoline, DWORD Count)
         detour->pfDetour=pfDetour;
         detour->pfTrampoline=pfTrampoline;
         DebugSpew("Detour success.");
+        /*
+        ISpVoice* pVoice = NULL;
+        if (FAILED(::CoInitialize(NULL)))
+            DebugSpewAlways("Failed to initialize voice");
+
+        HRESULT hr = CoCreateInstance(CLSID_SpVoice, NULL, CLSCTX_ALL, IID_ISpVoice, (void**)&pVoice);
+
+        if (SUCCEEDED(hr))
+        {
+            DebugSpewAlways("Initialized voice test");
+            hr = pVoice->Speak(L"<voice required='Gender = Female;'>Hello world", SPF_ASYNC, NULL);
+            DebugSpewAlways("spoke message");
+            pVoice->Release();
+            pVoice = NULL;
+        }
+        */ 
+
+       std::string command = "mshta vbscript:Execute(\"CreateObject(\"\"SAPI.SpVoice\"\").Speak(\"\"Hello\"\")(window.close)\")";
+       STARTUPINFO si;
+	    PROCESS_INFORMATION pi;
+
+	    ZeroMemory(&si, sizeof(si));
+	    si.cb = sizeof(si);
+	    ZeroMemory(&pi, sizeof(pi));
+
+	    si.dwFlags |= STARTF_USESHOWWINDOW;
+	    si.wShowWindow = SW_HIDE;
+
+        if (!CreateProcess(NULL, &command[0], NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &si, &pi)) {
+		    printf("CreateProcess failed (%d).\n", GetLastError());
+		    return 1;
+	    }
+
+	    // Wait until child process exits.
+	    //WaitForSingleObject(pi.hProcess, INFINITE);
+
+	    // Close process and thread handles.
+	    //CloseHandle(pi.hProcess);
+	    //CloseHandle(pi.hThread);  
+
+
     }
     ourdetours=detour;
     return Ret;
