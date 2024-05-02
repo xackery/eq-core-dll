@@ -1931,39 +1931,6 @@ FUNCTION_AT_ADDRESS(void  CInvSlotMgr::SelectSlot(class CInvSlot *),CInvSlotMgr_
 #ifdef CInvSlotMgr__UpdateSlots_x
 FUNCTION_AT_ADDRESS(void  CInvSlotMgr::UpdateSlots(void),CInvSlotMgr__UpdateSlots);
 #endif
-#ifdef CItemDisplayWnd__CItemDisplayWnd_x
-FUNCTION_AT_ADDRESS( CItemDisplayWnd::CItemDisplayWnd(class CXWnd *),CItemDisplayWnd__CItemDisplayWnd);
-#endif
-#ifdef CItemDisplayWnd__UpdateStrings_x
-FUNCTION_AT_ADDRESS(void  CItemDisplayWnd::UpdateStrings(void),CItemDisplayWnd__UpdateStrings);
-#endif
-#ifdef CItemDisplayWnd__SetItem_x
-FUNCTION_AT_ADDRESS(void  CItemDisplayWnd::SetItem(class EQ_Item *,bool),CItemDisplayWnd__SetItem);
-#endif
-#ifdef CItemDisplayWnd__SetItemText_x
-FUNCTION_AT_ADDRESS(void  CItemDisplayWnd::SetItemText(char *),CItemDisplayWnd__SetItemText);
-#endif
-#ifdef CItemDisplayWnd__GetSizeString_x
-FUNCTION_AT_ADDRESS(void  CItemDisplayWnd::GetSizeString(int,char *),CItemDisplayWnd__GetSizeString);
-#endif
-#ifdef CItemDisplayWnd__CreateRaceString_x
-FUNCTION_AT_ADDRESS(class CXStr  CItemDisplayWnd::CreateRaceString(class EQ_Equipment *),CItemDisplayWnd__CreateRaceString);
-#endif
-#ifdef CItemDisplayWnd__CreateClassString_x
-FUNCTION_AT_ADDRESS(class CXStr  CItemDisplayWnd::CreateClassString(class EQ_Equipment *),CItemDisplayWnd__CreateClassString);
-#endif
-#ifdef CItemDisplayWnd__CreateMealSizeString_x
-FUNCTION_AT_ADDRESS(class CXStr  CItemDisplayWnd::CreateMealSizeString(class EQ_Equipment *),CItemDisplayWnd__CreateMealSizeString);
-#endif
-#ifdef CItemDisplayWnd__CreateModString_x
-FUNCTION_AT_ADDRESS(class CXStr  CItemDisplayWnd::CreateModString(class EQ_Equipment *,int,int,int *),CItemDisplayWnd__CreateModString);
-#endif
-#ifdef CItemDisplayWnd__CreateEquipmentStatusString_x
-FUNCTION_AT_ADDRESS(class CXStr  CItemDisplayWnd::CreateEquipmentStatusString(class EQ_Item *),CItemDisplayWnd__CreateEquipmentStatusString);
-#endif
-#ifdef CItemDisplayWnd__SetSpell_x
-FUNCTION_AT_ADDRESS(void  CItemDisplayWnd::SetSpell(int SpellID,bool HasSpellDescr,int),CItemDisplayWnd__SetSpell);
-#endif
 #ifdef CJournalCatWnd__CJournalCatWnd_x
 FUNCTION_AT_ADDRESS( CJournalCatWnd::CJournalCatWnd(class CXWnd *),CJournalCatWnd__CJournalCatWnd);
 #endif

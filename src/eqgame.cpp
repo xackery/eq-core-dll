@@ -21,6 +21,7 @@
 #include <limits.h>
 #include <intrin.h>
 
+
 #include "core_init.h"
 
 #pragma comment(lib, "Iphlpapi.lib")
@@ -776,7 +777,6 @@ void InitHooks()
 		InitializeMQ2Pulse();
 		InitializeMQ2Spawns();
 		InitializeMapPlugin();
-		InitializeMQ2ItemDisplay();
 		InitializeMQ2Labels();
 	}
 
@@ -1102,6 +1102,7 @@ bool __cdecl MQ2Initialize()
 	InitializeMapPlugin();
 	// InitializeMQ2KeyBinds();
    }
+   
    return true;
 }
 

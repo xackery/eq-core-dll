@@ -47,7 +47,7 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetName>dinput8</TargetName>
     <OutDir>..\bin\debug\</OutDir>
-  </PropertyGroup>
+   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>dinput8</TargetName>
@@ -150,7 +150,6 @@
     <ClCompile Include="MQ2DataVars.cpp" />
     <ClCompile Include="MQ2DetourAPI.cpp" />
     <ClCompile Include="MQ2Globals.cpp" />
-    <ClCompile Include="MQ2ItemDisplay.cpp" />
     <ClCompile Include="MQ2Labels.cpp" />
     <ClCompile Include="MQ2Map.cpp" />
     <ClCompile Include="MQ2MapAPI.cpp" />

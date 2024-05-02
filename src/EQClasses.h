@@ -104,7 +104,6 @@ class CInvSlot;
 class CInvSlotMgr;
 class CInvSlotTemplate;
 class CInvSlotWnd;
-class CItemDisplayWnd;
 class CJournalCatWnd;
 class CJournalNPCWnd;
 class CJournalTextWnd;
@@ -2590,32 +2589,6 @@ EQLIB_OBJECT int CInvSlotWnd::WndNotification(class CXWnd *,unsigned __int32,voi
 //EQLIB_OBJECT void * CInvSlotWnd::`scalar deleting destructor'(unsigned int);
 //EQLIB_OBJECT void * CInvSlotWnd::`vector deleting destructor'(unsigned int);
 EQLIB_OBJECT void CInvSlotWnd::SetAttributesFromSidl(class CParamScreenPiece *);
-};
-
-class CItemDisplayWnd : public CSidlScreenWnd
-{
-public:
-EQLIB_OBJECT CItemDisplayWnd::CItemDisplayWnd(class CXWnd *);
-EQLIB_OBJECT class CXStr CItemDisplayWnd::CreateEquipmentStatusString(class EQ_Item *);
-EQLIB_OBJECT void CItemDisplayWnd::SetItem(class EQ_Item *,bool);
-EQLIB_OBJECT void CItemDisplayWnd::SetItemText(char *);
-EQLIB_OBJECT void CItemDisplayWnd::SetSpell(int SpellID,bool HasSpellDescr,int);
-EQLIB_OBJECT void CItemDisplayWnd::UpdateStrings(void);
-// virtual
-EQLIB_OBJECT CItemDisplayWnd::~CItemDisplayWnd(void);
-EQLIB_OBJECT int CItemDisplayWnd::HandleKeyboardMsg(unsigned __int32,unsigned __int32,bool);
-EQLIB_OBJECT int CItemDisplayWnd::OnProcessFrame(void);
-EQLIB_OBJECT int CItemDisplayWnd::WndNotification(class CXWnd *,unsigned __int32,void *);
-//EQLIB_OBJECT void * CItemDisplayWnd::`scalar deleting destructor'(unsigned int);
-//EQLIB_OBJECT void * CItemDisplayWnd::`vector deleting destructor'(unsigned int);
-EQLIB_OBJECT void CItemDisplayWnd::Activate(void);
-EQLIB_OBJECT void CItemDisplayWnd::Deactivate(void);
-// protected
-EQLIB_OBJECT class CXStr CItemDisplayWnd::CreateClassString(class EQ_Equipment *);
-EQLIB_OBJECT class CXStr CItemDisplayWnd::CreateMealSizeString(class EQ_Equipment *);
-EQLIB_OBJECT class CXStr CItemDisplayWnd::CreateModString(class EQ_Equipment *,int,int,int *);
-EQLIB_OBJECT class CXStr CItemDisplayWnd::CreateRaceString(class EQ_Equipment *);
-EQLIB_OBJECT void CItemDisplayWnd::GetSizeString(int,char *);
 };
 
 class CJournalCatWnd : public CSidlScreenWnd

@@ -835,7 +835,6 @@ EQLIB_VAR DWORD pinstCHotButtonWnd1;
 EQLIB_VAR DWORD pinstCHotButtonWnd2;
 EQLIB_VAR DWORD pinstCHotButtonWnd3;
 EQLIB_VAR DWORD pinstCHotButtonWnd4;
-EQLIB_VAR DWORD pinstCItemDisplayManager;
 EQLIB_VAR DWORD pinstCItemExpTransferWnd;
 EQLIB_VAR DWORD pinstCLFGuildWnd;
 EQLIB_VAR DWORD pinstCMIZoneSelectWnd;
@@ -963,9 +962,6 @@ EQLIB_VAR DWORD CInvSlot__SliderComplete;
 EQLIB_VAR DWORD CInvSlot__GetItemBase;
 
 EQLIB_VAR DWORD CInvSlotWnd__DrawTooltip;
-
-EQLIB_VAR DWORD CItemDisplayWnd__SetSpell;
-EQLIB_VAR DWORD CItemDisplayWnd__UpdateStrings;
 
 EQLIB_VAR DWORD CLabel__Draw;
 

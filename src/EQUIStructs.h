@@ -730,29 +730,6 @@ typedef struct _EQNOTESWINDOW {
 /*0x14c*/ struct _CSIDLWND *pEditWnd;
 } EQNOTESWINDOW, *PEQNOTESWINDOW;
 
-// Lax 10-29-2003 
-// Actual size 0x5dc 20121212 - ieatacid
-typedef struct _EQITEMWINDOW 
-{ 
-/*0x000*/ struct _CSIDLWND Wnd;
-/*0x21c*/ struct _CSIDLWND *DisplayWnd;
-/*0x220*/ BYTE Unknown0x220[0x70];
-/*0x290*/ PCXSTR ItemInfo;
-/*0x294*/ PCXSTR WindowTitle;
-/*0x298*/ PCXSTR Unknown0x298; // possibly PCXSTR of information as on charms 
-/*0x29c*/ DWORD Unknown0x29c;
-/*0x2a0*/ DWORD Unknown0x2a0;
-/*0x2a4*/ PCXSTR UnknownCXStr; // if this is NULL don't populate item data in MQ2ItemDisplay
-/*0x2a8*/ PCXSTR Unknown0x2a8;
-/*0x2ac*/ PCONTENTS pItem;
-/*0x29c*/ PVOID TextureAnim;
-/*0x2a0*/ PVOID TextureAnim2;
-/*0x2a4*/ BYTE  Unknown0x2a4[0x4c];
-/*0x2f0*/ DWORD IDW_ItemInfo_Num_Lines;
-/*0x2f4*/ struct _CSIDLWND *IDW_ItemInfo[0xc];
-// pointers to stat labels, etc, in this area
-} EQITEMWINDOW, *PEQITEMWINDOW;
-
 // Actual size 0x1c8 07-09-2008
 typedef struct _EQSPELLINFOWINDOW 
 { 

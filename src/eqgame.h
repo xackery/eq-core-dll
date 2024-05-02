@@ -244,7 +244,6 @@
 #define pinstCHotButtonWnd2_x                                      0xF73858
 #define pinstCHotButtonWnd3_x                                      0xF7385C
 #define pinstCHotButtonWnd4_x                                      0xF73880
-#define pinstCItemDisplayManager_x                                 0xF73A28
 #define pinstCItemExpTransferWnd_x                                 0xF73A6C
 #define pinstCLFGuildWnd_x                                         0xF73C28
 #define pinstCMIZoneSelectWnd_x                                    0xF73F78
@@ -397,10 +396,6 @@
 
 // CInvSlotWnd
 #define CInvSlotWnd__DrawTooltip_x                                 0x699AD0
-
-// CItemDisplayWnd 
-#define CItemDisplayWnd__SetSpell_x                                0x75F060
-#define CItemDisplayWnd__UpdateStrings_x                           0x69AE30
 
 // CLabel 
 #define CLabel__Draw_x                                             0x6B4D40
