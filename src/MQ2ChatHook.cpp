@@ -52,8 +52,7 @@ public:
             //if (gTelnetServer && gTelnetConnection && !gPauseTelnetOutput) TelnetServer_Write(szMsg); 
             BOOL SkipTrampoline;
 			//OnDPSIncomingChat(szMsg, dwColor);
-            //Benchmark(bmPluginsIncomingChat,SkipTrampoline=PluginsIncomingChat(szMsg,dwColor));
-			Trampoline(szMsg, dwColor, EqLog, dopercentsubst); 
+           Trampoline(szMsg, dwColor, EqLog, dopercentsubst); 
         } 
         gbInChat = FALSE; 
     } 
@@ -67,7 +66,6 @@ public:
 
         sprintf(szMsg,"%s tells you, '%s'",name,message);
 
-       // Benchmark(bmPluginsIncomingChat,SkipTrampoline=PluginsIncomingChat(szMsg,color));
        TellWnd_Trampoline(message,name,name2,unknown,color,b);
 
         gbInChat=false;

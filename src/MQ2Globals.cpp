@@ -238,21 +238,6 @@ struct _actordefentry ActorDefList[] = {
     0, "NULL"
     };
 
-/* BENCHMARKS */
-DWORD bmWriteChatColor=0;
-DWORD bmPluginsIncomingChat=0;
-DWORD bmPluginsPulse=0;
-DWORD bmPluginsOnZoned=0;
-DWORD bmPluginsCleanUI=0;
-DWORD bmPluginsReloadUI=0;
-DWORD bmPluginsDrawHUD=0;
-DWORD bmPluginsSetGameState=0;
-DWORD bmParseMacroParameter=0;
-DWORD bmUpdateSpawnSort=0;
-DWORD bmUpdateSpawnCaptions=0;
-DWORD bmCalculate=0;
-DWORD bmBeginZone=0; 
-DWORD bmEndZone=0;
 
 #ifndef ISXEQ
 PDATAVAR pGlobalVariables=0;

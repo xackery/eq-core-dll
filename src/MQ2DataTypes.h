@@ -2774,51 +2774,6 @@ public:
     }
 }; 
 #endif
-class MQ2BenchmarkType : public MQ2Type
-{
-public:
-    static enum BenchmarkMembers
-    {
-        Name=1,
-        ID=2,
-        Iterations=3,
-        TimeSpent=4,
-        AvgTimeSpent=5,
-    };
-    MQ2BenchmarkType():MQ2Type("benchmark")
-    {
-        TypeMember(Name);
-        TypeMember(ID);
-        TypeMember(Iterations);
-        TypeMember(TimeSpent);
-        TypeMember(AvgTimeSpent);
-    }
-
-    ~MQ2BenchmarkType()
-    {
-    }
-
-    bool GETMEMBER();
-
-    bool ToString(MQ2VARPTR VarPtr, PCHAR Destination)
-    {
-        return false;
-    }
-    bool FromData(MQ2VARPTR &VarPtr, MQ2TYPEVAR &Source)
-    {
-        VarPtr.DWord=Source.DWord;
-        return true;
-    }
-    bool FromString(MQ2VARPTR &VarPtr, PCHAR Source)
-    {
-        if (IsNumber(Source))
-        {
-            VarPtr.DWord=atoi(Source);
-            return true;
-        }
-        return false;
-    }
-}; 
 
 class MQ2SkillType : public MQ2Type
 {

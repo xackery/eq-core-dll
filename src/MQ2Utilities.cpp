@@ -4152,7 +4152,6 @@ BOOL Calculate(PCHAR szFormula, DOUBLE &Result)
         pFalse[4]='0';
     }
     BOOL Ret;
-    //Benchmark(bmCalculate,Ret=ActualCalculate(Buffer,Result));
     Ret=FastCalculate(Buffer,Result);
     return Ret;
 }

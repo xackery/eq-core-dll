@@ -14,7 +14,7 @@ GNU General Public License for more details.
 ******************************************************************************/
 
 #define VersionString "September 23, 2004"
-#define DebugHeader "[Core]"
+#define DebugHeader "[Core] "
 #define LoadedString "Core Extensions Loaded."
 #define ToUnloadString "Core Unloading..."
 #define UnloadedString "Core Unloaded."
@@ -23,9 +23,6 @@ GNU General Public License for more details.
 #define _WIN32_WINNT 0x510
 #define DIRECTINPUT_VERSION 0x800
 
-
-// uncomment this line to turn off the single-line benchmark macro
-// #define DISABLE_BENCHMARKS
 
 #pragma warning(disable:4530)
 #pragma warning(disable:4786)
@@ -310,7 +307,6 @@ void         HandleEdgeDPSDeath(EdgeDPSEntry entry);
 EdgeDPSEntry GetEdgeDPSEntryByID(DWORD id, bool bAdd = true);
 void SetEdgeDPSEntryByID(DWORD id, EdgeDPSEntry entry);
 PLUGIN_API VOID SetMapGameState(DWORD GameState);
-LEGACY_API VOID InitializeMQ2ItemDisplay();
 LEGACY_API VOID InitializeMQ2Labels();
 LEGACY_API VOID ShutdownMQ2Commands();
 LEGACY_API VOID AddCommand(PCHAR Command, fEQCommand Function, BOOL EQ=0, BOOL Parse=1, BOOL InGame=0);
@@ -624,9 +620,6 @@ LEGACY_API BOOL Calculate(PCHAR szFormula, DOUBLE& Dest);
 
 #define MAX_WEAPONS             0x000000ff
 
-#ifndef ISXEQ
-#define MQ2AUTH(z) EQLIB_API VOID z(DWORD x);
-#endif
 
 EQLIB_API VOID memchecks_tramp(PCHAR,DWORD,PVOID,DWORD,BOOL); 
 EQLIB_API VOID memchecks(PCHAR,DWORD,PVOID,DWORD,BOOL);

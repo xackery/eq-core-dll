@@ -157,10 +157,6 @@
 					>
 				</File>
 				<File
-					RelativePath="MQ2Benchmarks.cpp"
-					>
-				</File>
-				<File
 					RelativePath="MQ2ChatHook.cpp"
 					>
 				</File>

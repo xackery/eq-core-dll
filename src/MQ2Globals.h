@@ -18,23 +18,6 @@ bool InitOffsets();
 
 EQLIB_VAR DWORD baseAddress;
 
-/* BENCHMARK HANDLES */
-
-EQLIB_API DWORD bmWriteChatColor;
-EQLIB_API DWORD bmPluginsIncomingChat;
-EQLIB_API DWORD bmPluginsPulse;
-EQLIB_API DWORD bmPluginsOnZoned;
-EQLIB_API DWORD bmPluginsCleanUI;
-EQLIB_API DWORD bmPluginsReloadUI;
-EQLIB_API DWORD bmPluginsDrawHUD;
-EQLIB_API DWORD bmPluginsSetGameState;
-EQLIB_API DWORD bmParseMacroParameter;
-EQLIB_API DWORD bmUpdateSpawnSort;
-EQLIB_API DWORD bmUpdateSpawnCaptions;
-EQLIB_API DWORD bmCalculate;
-EQLIB_API DWORD bmBeginZone; 
-EQLIB_API DWORD bmEndZone;
-
 /* OTHER */
 
 #ifndef ISXEQ

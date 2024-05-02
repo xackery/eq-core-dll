@@ -303,7 +303,6 @@ bool __cdecl MQ2Initialize()
     for (nColorMQ2DataError=0 ; szColorMQ2DataError[nColorMQ2DataError] ; nColorMQ2DataError++) {}
     for (nColorFatalError=0 ; szColorFatalError[nColorFatalError] ; nColorFatalError++) {}
 
-    InitializeMQ2Benchmarks();
 #ifndef ISXEQ
     InitializeParser();
 #endif
@@ -343,7 +342,6 @@ void __cdecl MQ2Shutdown()
 #endif
     DebugTry(ShutdownMQ2Commands());
     DebugTry(ShutdownMQ2Detours());
-    DebugTry(ShutdownMQ2Benchmarks());
 
 }
 

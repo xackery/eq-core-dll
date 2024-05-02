@@ -49,7 +49,6 @@ EQLIB_API VOID WriteChatColor(PCHAR Line, DWORD Color, DWORD Filter)
 	if (gFilterMQ)
 		return;
 	PluginDebug("Begin WriteChatColor()");
-	EnterMQ2Benchmark(bmWriteChatColor);
 	CHAR PlainText[MAX_STRING]={0};
 	StripMQChat(Line,PlainText);
 	CheckChatForEvent(PlainText);
@@ -76,7 +75,6 @@ EQLIB_API VOID WriteChatColor(PCHAR Line, DWORD Color, DWORD Filter)
 	Chat.Color=Color;
 	pISInterface->ServiceBroadcast(pExtension,hChatService,CHATSERVICE_OUTGOING,&Chat);
 
-	ExitMQ2Benchmark(bmWriteChatColor);
 }
 
 
