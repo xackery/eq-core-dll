@@ -1,3 +1,0 @@
-LIBRARY "DSETUP.dll"
-EXPORTS
-DirectXSetupGetVersion @11

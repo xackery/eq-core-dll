@@ -1,39 +1,59 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
+*.aps
+*.bak
+*.dep
+*.dsp
+*.exp
+*.ilk
+*.iobj
+*.ipdb
+*.log
+*.mak
+*.map
+*.navmesh
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
+*.opensdf
+*.pdb
+*.sdf
+*.suo
+*.tlog
+*.tmp
+*.VC.db
+*.VC.opendb
+*.vcproj
+*.vcxproj.user
+*.vspscc
+*.zip
 .vs/
+
 build/
-enc_temp_folder/
-bin/
-Debug/
-Release/
+packages/
+
+UpgradeLog.htm
+
+CVS/
+ipch/
+
+.cvsignore
+.vscode/
+.ionide/
+
+# ignore ida files
+*.id?
+*.nam
+*.til
+
+# ignore files created from templates
+/include/config/crashpad.h
+
+# ignore tools repo
+src/tools
+
+# ignore a specific sln file
+src/MacroQuest*.sln
+!src/MacroQuest.sln
+
+# ignore generated protobuf files
+*.pb.*
+
+# ignore resharper files
+*.DotSettings.user
