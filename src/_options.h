@@ -60,6 +60,15 @@ bool isOldModelHorseSupportEnabled = false;
 // This requires custom server side code that is not in eqemu master branch, and in majority of cases can be left false
 bool isReportHardwareAddressEnabled = false;
 
+// isScribeAllEnabled if set to true it will disable all client restriction for spell and scroll scribing.
+// This requires custom server side code as the server will also check restrictions
+bool isScribeAllEnabled = false;
+
+// isEquipAllEnabled if set to true it will disable all class and class level client restrictions for equiping items.
+// This requires custom server side code as the server will also check restrictions
+// Note: race and deity restrictions are WIP. See the comments in eqgame.cpp 
+bool isEquipAllEnabled = false;
+
 // ***** NPC *******
 
 // areCustomNPCsEnabled if set to true will allow the NPCs defined in NPCs[] to be injected in game

@@ -964,6 +964,38 @@ void InitHooks()
 		var = (((DWORD)0x00709AC1 - 0x400000) + baseAddress); // Nop the gamma slider
 		PatchA((DWORD*)var, "\x90\x90\x90\x90\x90\x90\xE9\xD0\x00\x90", 10); 
 	}*/
+
+        if (isScribeAllEnabled) {
+		DebugSpew("Remove scroll and tome scribing class restrictions");
+		var = (((DWORD)0x0044C48D - 0x400000) + baseAddress);
+		PatchA((DWORD*)var, "\x90\x90\x90\x90", 4);
+
+		DebugSpew("Remove scroll and tome scribing racial restrictions");
+		var = (((DWORD)0x00446337 - 0x400000) + baseAddress);
+		PatchA((DWORD*)var, "\x85\xDB", 2);
+	}
+
+	if (isEquipAllEnabled) {
+		DebugSpew("Remove auto-equip class restrictions");
+		var = (((DWORD)0x004FE354 - 0x400000) + baseAddress);
+		PatchA((DWORD*)var, "\x90\x90\x90\x90\x90\x90\x90\x90", 8);
+
+		DebugSpew("Remove slot equip class restrictions");
+		var = (((DWORD)0x006960C0 - 0x400000) + baseAddress);
+		PatchA((DWORD*)var, "\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90", 11);
+
+		// WIP: Removing race, deity restrictions
+		// There are no client side racial and deity equip restrictions but
+		// even if the server allows equipping the client does not show stat increases
+	}
+
+	//// if (isEquipInAnySlotEnabled) {
+		//// WIP: Removes all client checks for equipable items
+		//// Unfortunately it also totally breaks auto-equip
+		//// Currently only good for showboating 
+		// var = (((DWORD)0x005832D7 - 0x400000) + baseAddress);
+		// PatchA((DWORD*)var, "\x75\xAB", 2);
+	//// }
 	
 }
 
