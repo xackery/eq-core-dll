@@ -25,6 +25,10 @@ bool areLuclinModelsDisabled = false;
 // isBazaarWindowDisabled if set to true will disable the bazaar window in game by doing a soft patch.
 bool isBazaarWindowDisabled = false;
 
+// allowSkeletonTextureOverride id set to true allows overriding the default that the client hard codes the skeleton texture to 1 this is a patch that removes that. This is only beneficial if using the classic skeleton models
+// that have a dark and light texture - thanks to secrets
+bool allowSkeletonTextureOverride = false;
+
 // isHeroicDisabled if set to true will make heroic stats not display
 bool isHeroicDisabled = false;
 
