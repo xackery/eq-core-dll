@@ -834,6 +834,9 @@ void InitHooks()
 		PatchA((DWORD*)var, "\x90\x90\x90\x90\x90\x90", 6);
 	}
 
+	var = (((DWORD)0x008C4CE0 - 0x400000) + baseAddress);
+	EzDetour((DWORD)var, SendMessage_Detour, SendMessage_Trampoline);
+
 	var = (((DWORD)0x004C3250 - 0x400000) + baseAddress);
 	EzDetour((DWORD)var, HandleWorldMessage_Detour, HandleWorldMessage_Trampoline);
 
