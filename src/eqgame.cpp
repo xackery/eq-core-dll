@@ -865,6 +865,11 @@ void InitHooks()
 		PatchA((DWORD*)var, "\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90", 13);
 	}
 
+	if (allowSkeletonTextureOverride) {
+		// undo skeleton texture hard code credit to secrets for showing me how to figure this out
+		var = (((DWORD)0x594B06 - 0x400000) + baseAddress);
+		PatchA((DWORD*)var, "\x90\x90\x90\xEB", 4);
+	}
 	//0065CC71
 	//var = (((DWORD)0x0065CC09 - 0x400000) + baseAddress);
 	//PatchA((DWORD*)var, "\x90\x90\x90\x90",
