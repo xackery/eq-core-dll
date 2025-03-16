@@ -56,8 +56,26 @@ bool isChecksumFixEnabled = false;
 // quality of life for those that don't enjoy Luclin models but want their benefits
 bool isOldModelHorseSupportEnabled = false;
 
-// isReportHardwareAddressEnabled if set to true will inspect mac addresses and send a more informative context of where EQ is running. 
-// This requires custom server side code that is not in eqemu master branch, and in majority of cases can be left false
+
+/*
+isReportHardwareAddressEnabled if set to true will inspect mac addresses and send a more informative context of where EQ is running.
+This requires custom server side code that is not in eqemu master branch, and in majority of cases can be left false
+
+Add the following struct to "/common/eq_packets_structs.h"
+
+struct MacEntry_Struct {
+    BYTE address[8];
+};
+
+add to "/world/client.cpp", Client::HandlePacket, case OP_World_Client_CRC1:
+
+case OP_World_Client_CRC1:
+{
+    if (app->size == sizeof(MacEntry_Struct)) {
+        //Code to handle the MacEntry_Struct.
+    }
+}
+*/
 bool isReportHardwareAddressEnabled = false;
 
 // isAllowIllegalAugmentsEnabled if set to true will allow inserting augments which create combinations that the player cannot use.
